@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zapatoes",
+  "info": {
+    "singularName": "zapato",
+    "pluralName": "zapatoes",
+    "displayName": "Zapato"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "precio": {
+      "type": "biginteger"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "activo": {
+      "type": "boolean"
+    },
+    "tallas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::talla.talla"
+    }
+  }
+}
