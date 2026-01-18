@@ -8,8 +8,19 @@ export default ({ env }) => ({
         api_secret: env('CLOUDINARY_SECRET'),
       },
       actionOptions: {
-        upload: {},
-        uploadStream: {},
+        upload: {
+          // Configuración para optimizar imágenes
+          use_filename: true,
+          unique_filename: true,
+          overwrite: false,
+          folder: 'strapi-uploads',
+          // Asegurar que se use HTTPS
+          secure: true,
+        },
+        uploadStream: {
+          folder: 'strapi-uploads',
+          secure: true,
+        },
         delete: {},
       },
     },
